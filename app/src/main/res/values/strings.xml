@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">My Places POC</string>
+    <string name="splash_screen">Splash Screen</string>
+    <string name="search">Search</string>
+    <string name="favourites">Favourites</string>
+    <string name="options">Options</string>
+    <string name="navigation_drawer_open">Open Navigation Drawer</string>
+    <string name="navigation_drawer_closed">Open Navigation Drawer</string>
+    <string name="search_msg_txt">You have choose search</string>
+    <string name="favourites_msg_txt">you have selected favourites</string>
+
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="place_picker">Place Picker</string>
+    <string name="current_place">Near Places</string>
+    <string name="auto_complete">Auto Complete</string>
+    <string name="google_app_id">AIzaSyBiCHXC-S6QyhfZuiAbYtWnFvyNUvUpsfU</string>
+    <string name="name">Name :</string>
+    <string name="phonenumber">PhoneNumber :</string>
+    <string name="rating">Rating :</string>
+    <string name="likelihood">Likelihood :</string>
+    <string name="near_by_places">Near By Places :</string>
+    <string name="call">Call</string>
+    <string name="favourite">Favourite</string>
+    <string name="website">Website</string>
+    <string name="description_favourite">Make favourite</string>
+    <string name="website_place_website">place_website</string>
+    <string name="description_call">Description Call</string>
+    <string name="website_null_msg">No URL is Provided</string>
+    <string name="place_name">Name</string>
+    <string name="place_rating">Rating</string>
+    <string name="phone_number">PhoneNumber</string>
+    <string name="place_url">URL</string>
+    <string name="navigate_next_descrption">Navigate Next</string>
+    <string name="places_on_map">Places On Map</string>
+
+</resources>

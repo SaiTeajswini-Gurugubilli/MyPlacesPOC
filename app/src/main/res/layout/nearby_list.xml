@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginTop="5dp"
+    android:background="@android:drawable/dialog_holo_light_frame">
+<LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:baselineAligned="false"
+    android:padding="10dp">
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/place_name"
+        android:paddingTop="10dp"
+        android:textColor="#000"
+        android:layout_marginBottom="10dp"
+        android:textStyle="bold"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/place_address"
+        android:maxLines="1"
+        android:maxWidth="150dp"
+        android:ellipsize="marquee"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autoLink="phone"
+        android:id="@+id/place_phone" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="38dp"
+            android:id="@+id/imagebtn"
+            android:layout_gravity="end"
+            android:contentDescription="@string/navigate_next_descrption"
+            android:src="@drawable/nav_next"/>
+
+        <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+           style="?android:attr/ratingBarStyleSmall"
+            android:layout_gravity="bottom|end"
+        android:id="@+id/rating"
+        android:max="5"/>
+    </LinearLayout>
+</LinearLayout>
+</android.support.v7.widget.CardView>
