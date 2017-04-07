@@ -5,32 +5,58 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.mobility.myplacespoc.MainActivityFragment">
-    <Button
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:id="@+id/lin">
+       <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+           android:layout_weight="1"
         android:id="@+id/current_place"
         android:text="@string/current_place"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_centerHorizontal="true"
         android:layout_marginLeft="10dp"
         android:layout_marginStart="10dp"
         android:onClick="currentPlace" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/current_place"
-        android:layout_toEndOf="@+id/current_place"
+android:layout_weight="1"
         android:id="@+id/navigate_map"
-        android:layout_marginLeft="20dp"
-        android:layout_marginStart="10dp"
         android:text="@string/places_on_map"
-        android:layout_centerHorizontal="true"
         android:onClick="navigateMap" />
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv"
-        style="?android:attr/ratingBarStyleSmall"
-        android:layout_below="@+id/current_place"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent" />
+
+</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/lin"
+        android:id="@+id/lin2"
+        android:orientation="vertical"/>
+    <!-- <android.support.v7.widget.RecyclerView
+         android:id="@+id/rv"
+         style="?android:attr/ratingBarStyleSmall"
+ android:layout_below="@+id/lin"
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent" />
+     -->
+
 </RelativeLayout>
+    <!-- <android.support.design.widget.TabLayout
+              android:id="@+id/tab_layout"
+              android:layout_height="wrap_content"
+              android:layout_width="match_parent"
+              android:background = "?attr/colorPrimary"
+              android:minHeight="?attr/actionBarSize"
+              android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
+       <android.support.v4.view.ViewPager
+           android:id="@+id/viewpager"
+           android:layout_below="@+id/tab_layout"
+           android:layout_height="fill_parent"
+           android:layout_width="match_parent" />-->
+
+
+

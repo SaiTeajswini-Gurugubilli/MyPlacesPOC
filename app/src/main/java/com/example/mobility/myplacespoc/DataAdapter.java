@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Locale;
 
@@ -82,6 +83,9 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
         @Override
         public void onClick(View v) {
             if (v.getId() == R.id.imagebtn) {
+
+
+
                 NearByPlaces currentplace = nearByPlacesArrayList.get(getAdapterPosition());
                 double lat, lng;
 
@@ -91,7 +95,9 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 mContext.startActivity(intent);
+
             } else {
+
                 Intent intent = new Intent(mContext, SelectedPlaceDetails.class);
                 NearByPlaces currentplace = nearByPlacesArrayList.get(getAdapterPosition());
                 String address = currentplace.getAddress();
@@ -115,6 +121,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
                 intent.putExtra("id",placeid);
 
                 mContext.startActivity(intent);
+
 
             }
         }

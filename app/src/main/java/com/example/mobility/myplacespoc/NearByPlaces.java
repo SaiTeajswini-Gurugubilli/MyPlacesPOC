@@ -41,26 +41,6 @@ public class NearByPlaces implements Serializable{
         return websiteUri;
     }
 
-    public NearByPlaces(String placeId,String placeName, String phoneNumber, float rating, Uri websiteUri, String address,double latitude, double longitude) {
-        this.placeName = placeName;
-        this.phoneNumber = phoneNumber;
-        this.rating = rating;
-        this.latitude = latitude;
-        this.longitude = longitude;
-        this.address = address;
-        this.placeId = placeId;
-        this.websiteUri = websiteUri;
-    }
-
-    public NearByPlaces(String placeName, String phoneNumber, float rating, double latitude, double longitude, String address) {
-        this.placeName = placeName;
-        this.phoneNumber = phoneNumber;
-        this.rating = rating;
-        this.latitude = latitude;
-        this.longitude = longitude;
-        this.address = address;
-    }
-
     public double getLatitude() {
         return latitude;
     }
@@ -77,13 +57,6 @@ public class NearByPlaces implements Serializable{
         this.longitude = longitude;
     }
 
-    public NearByPlaces(String placeName, float likelihood, String phonenumber, float rating) {
-
-        this.placeName = placeName;
-        this.phoneNumber = phonenumber;
-        this.rating = rating;
-    }
-
     public String getPlaceName() {
         return placeName;
     }
@@ -91,15 +64,6 @@ public class NearByPlaces implements Serializable{
     public void setPlaceName(String placeName) {
         this.placeName = placeName;
     }
-/*
-    public String getPhoneNumber() {
-        return  phoneNumber;
-    }
-
-    public void setPhoneNumber(String image) {
-        this. phoneNumber = image;
-    }*/
-
 
     public String getPhoneNumber() {
         return phoneNumber;

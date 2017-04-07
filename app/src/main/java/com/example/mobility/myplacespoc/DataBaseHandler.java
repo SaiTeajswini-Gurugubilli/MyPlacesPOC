@@ -134,7 +134,7 @@ new String[]{String.valueOf(id)});
 
     public ArrayList<NearByPlaces> retriveFav() {
         ArrayList<NearByPlaces> list = new ArrayList<>();
-        String selectQuery = "select * from place_Details WHERE id = 1";
+        String selectQuery = "select * from place_Details WHERE favourite = 1";
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
         if (cursor.moveToFirst()) {
