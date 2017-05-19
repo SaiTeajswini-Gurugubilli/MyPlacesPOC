@@ -16,13 +16,14 @@ import com.google.android.gms.location.places.PlaceLikelihood;
 import com.google.android.gms.location.places.PlaceLikelihoodBuffer;
 import com.google.android.gms.location.places.Places;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Created by Mobility on 07/04/17.
  */
 
-public class PlacesDetails {
+public class PlacesDetails implements Serializable {
     int permission_request_code = 100;
 
 

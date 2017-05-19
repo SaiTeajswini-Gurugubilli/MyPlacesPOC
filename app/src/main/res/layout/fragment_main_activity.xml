@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context="com.example.mobility.myplacespoc.MainActivityFragment">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     tools:context="com.example.mobility.myplacespoc.MainActivityFragment">
 
 <LinearLayout
@@ -43,8 +49,14 @@ android:layout_weight="1"
          android:layout_height="wrap_content"
          android:layout_width="match_parent" />
      -->
+  <ImageView
+      android:layout_width="wrap_content"
+      android:layout_height="450dp"
+      android:id="@+id/img"
+      android:layout_below="@+id/lin2"/>
 
 </RelativeLayout>
+</ScrollView>
     <!-- <android.support.design.widget.TabLayout
               android:id="@+id/tab_layout"
               android:layout_height="wrap_content"

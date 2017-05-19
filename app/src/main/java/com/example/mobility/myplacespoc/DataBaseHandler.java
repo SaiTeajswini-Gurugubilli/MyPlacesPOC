@@ -153,5 +153,10 @@ new String[]{String.valueOf(id)});
         }
         return list;
     }
+
+    public void deleteFav(String mId) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete("place_Details","id = ?",new String[]{String.valueOf(mId)});
+    }
 }
 

@@ -3,6 +3,7 @@ package com.example.mobility.myplacespoc;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -17,6 +18,10 @@ import com.google.android.gms.common.api.PendingResult;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.location.places.PlaceLikelihood;
 import com.google.android.gms.location.places.PlaceLikelihoodBuffer;
+import com.google.android.gms.location.places.PlacePhotoMetadata;
+import com.google.android.gms.location.places.PlacePhotoMetadataBuffer;
+import com.google.android.gms.location.places.PlacePhotoMetadataResult;
+import com.google.android.gms.location.places.PlacePhotoResult;
 import com.google.android.gms.location.places.Places;
 import com.google.android.gms.maps.GoogleMap;
 
@@ -26,7 +31,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -34,13 +41,13 @@ import java.util.HashMap;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MainActivityFragment extends Fragment implements View.OnClickListener {
+public class MainActivityFragment extends Fragment implements View.OnClickListener,Serializable{
 
     private GoogleApiClient mGoogleApiClient;
     int permission_request_code= 100;
-
+    ImageView placeimg;
     ArrayList<NearByPlaces> mNearByPlaces;
-    //private RecyclerView recyclerview;
+    private RecyclerView recyclerview;
     Button currentplace,navigatemap;
   //  GoogleMap mMap;
    // HashMap<String,String> googlePlace;
@@ -58,6 +65,7 @@ public class MainActivityFragment extends Fragment implements View.OnClickListen
 
         currentplace = (Button)view.findViewById(R.id.current_place);
         navigatemap = (Button)view.findViewById(R.id.navigate_map);
+        placeimg = (ImageView)view.findViewById(R.id.img);
         currentplace.setOnClickListener(this);
         navigatemap.setOnClickListener(this);
 
@@ -75,7 +83,8 @@ public class MainActivityFragment extends Fragment implements View.OnClickListen
       /*  mGoogleApiClient = new GoogleApiClient.Builder(getActivity()).addApi(Places.GEO_DATA_API).addApi(Places.PLACE_DETECTION_API).build();*/
         mGoogleApiClient = new GoogleApiClient.Builder(getActivity().getApplicationContext()).addApi(Places.GEO_DATA_API).addApi(Places.PLACE_DETECTION_API).build();
 
-              /*  viewPager.setAdapter(adapter);
+
+        /*  viewPager.setAdapter(adapter);
 
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
 
@@ -113,17 +122,18 @@ public class MainActivityFragment extends Fragment implements View.OnClickListen
         return view;
 
     }
-     /*recyclerview = (RecyclerView)view.findViewById(R.id.rv);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity().getApplicationContext());
-       recyclerview.setLayoutManager(layoutManager);
-        mNearByPlaces = new ArrayList<>();
-        currentplace = (Button)view.findViewById(R.id.current_place);
-        navigatemap = (Button)view.findViewById(R.id.navigate_map);
-        currentplace.setOnClickListener(this);
-        navigatemap.setOnClickListener(this);
-        return view;
 
-    }*/
+    /* recyclerview = (RecyclerView)view.findViewById(R.id.rv);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity().getApplicationContext());
+        recyclerview.setLayoutManager(layoutManager);
+    mNearByPlaces = new ArrayList<>();
+     currentplace = (Button)view.findViewById(R.id.current_place);
+     navigatemap = (Button)view.findViewById(R.id.navigate_map);
+     currentplace.setOnClickListener(this);
+     navigatemap.setOnClickListener(this);
+     return view;
+
+ }*/
      @Override
     public void onStart() {
         super.onStart();
@@ -182,6 +192,7 @@ public class MainActivityFragment extends Fragment implements View.OnClickListen
                     nearByPlaces.setRating(rating);
                     nearByPlaces.setWebsiteUri(website);
 
+                   //plaecPhoto(id);
 
                     mNearByPlaces.add(nearByPlaces);
                     // mNearByPlaces.add(new NearByPlaces((String)placeLikelihood.getPlace().getName(),(String)placeLikelihood.getPlace().getPhoneNumber(),placeLikelihood.getPlace().getRating(),placeLikelihood.getPlace().getLatLng().latitude,placeLikelihood.getPlace().getLatLng().longitude,(String)placeLikelihood.getPlace().getAddress(),placeLikelihood.getPlace().getId(),placeLikelihood.getPlace().getWebsiteUri()));
@@ -193,6 +204,8 @@ public class MainActivityFragment extends Fragment implements View.OnClickListen
             }
         });
     }
+
+
 
     public void navigateMap(View view) {
         NearByPlaces place = new NearByPlaces();
